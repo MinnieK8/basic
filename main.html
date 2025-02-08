@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day, My Love!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff6b81, #ff4757, #e84393);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: 'Cursive', sans-serif;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+        }
+        
+        .petal {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: url('rose.png') no-repeat center;
+    background-size: cover;
+    opacity: 0.9;
+    animation: fall linear infinite;
+}
+
+        h1 {
+            font-size: 50px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+        }
+
+        .heart {
+            font-size: 80px;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.2); }
+        }
+
+        .message {
+            font-size: 22px;
+            width: 70%;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-top: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .rose {
+            width: 200px;
+            margin-top: 20px;
+            animation: sway 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes sway {
+            from { transform: rotate(-5deg); }
+            to { transform: rotate(5deg); }
+        }
+
+        .petal {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url('rose.png') no-repeat center;
+            background-size: cover;
+            opacity: 0.9;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            to { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .butterfly {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url('rose.png') no-repeat center;
+            background-size: cover;
+            animation: flutter 4s infinite alternate ease-in-out;
+        }
+
+        @keyframes flutter {
+            from { transform: translateY(-10px) rotate(-5deg); }
+            to { transform: translateY(10px) rotate(5deg); }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 10px white;
+            animation: sparkle 2s infinite alternate;
+        }
+
+        @keyframes sparkle {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart">❤</div>
+    <h1>Happy Rose Day, My Love!</h1>
+    <p class="message">
+        You are the most beautiful rose in the garden of my life,  
+        spreading love, joy, and fragrance every moment.  
+        On this special day, I want to say that *you mean the world to me!*  
+        Just like this rose, our love will bloom forever. 🌹💖
+    </p>
+    <img class="rose" src="rose.png">
+    <script>
+        function createPetal() {
+            const petal = document.createElement("div");
+            petal.classList.add("petal");
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.animationDuration = Math.random() * 4 + 3 + "s";
+            document.body.appendChild(petal);
+            setTimeout(() => { petal.remove(); }, 5000);
+        }
+
+        function createButterfly() {
+            const butterfly = document.createElement("div");
+            butterfly.classList.add("butterfly");
+            butterfly.style.left = Math.random() * 100 + "vw";
+            butterfly.style.top = Math.random() * 50 + "vh";
+            butterfly.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.body.appendChild(butterfly);
+            setTimeout(() => { butterfly.remove(); }, 6000);
+        }
+
+        function createSparkle() {
+            const sparkle = document.createElement("div");
+            sparkle.classList.add("sparkle");
+            sparkle.style.left = Math.random() * 100 + "vw";
+            sparkle.style.top = Math.random() * 100 + "vh";
+            sparkle.style.animationDuration = Math.random() * 2 + 1 + "s";
+            document.body.appendChild(sparkle);
+            setTimeout(() => { sparkle.remove(); }, 3000);
+        }
+
+        setInterval(createPetal, 300);
+        setInterval(createButterfly, 5000);
+        setInterval(createSparkle, 1000);
+    </script>
+
+</body>
+</html>
